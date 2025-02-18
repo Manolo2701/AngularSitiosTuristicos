@@ -1,0 +1,20 @@
+<div *ngIf="sitio; else noData">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ sitio.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="sitio.imageUrl" [alt]="sitio.name">
+      <mat-card-content>
+        <p>{{ sitio.description }}</p>
+        <p>{{ sitio.parrafo1 }}</p>
+        <p>{{ sitio.parrafo2 }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button routerLink="/">Volver</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <ng-template #noData>
+    <p>No se encontró el sitio.</p>
+  </ng-template>
+  

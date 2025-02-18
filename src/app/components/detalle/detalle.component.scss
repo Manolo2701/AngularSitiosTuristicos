@@ -1,0 +1,75 @@
+// Fondo con degradado azul inspirado en el mar
+.detalle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to bottom, #0077b6, #00a8e8, #90e0ef); 
+    color: white;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  // Tarjeta de contenido
+  .detalle-card {
+    max-width: 800px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.9); // Fondo semitransparente
+    color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  
+  // Imagen principal
+  .detalle-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  // Texto responsivo
+  .detalle-texto {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  // Botón de regreso
+  .detalle-boton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: #0077b6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  
+    &:hover {
+      background: #005f86;
+    }
+  }
+  
+  // Responsive: Ajustes en pantallas pequeñas
+  @media (max-width: 768px) {
+    .detalle-card {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .detalle-texto {
+      font-size: 1rem;
+    }
+  
+    .detalle-boton {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
