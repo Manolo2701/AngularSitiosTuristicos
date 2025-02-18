@@ -1,7 +1,7 @@
-// Fondo con degradado azul marino evocando el mar de Cádiz
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Se ajusta dinámicamente
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 20px;
     padding: 20px;
     width: 90%;
@@ -11,7 +11,6 @@
     min-height: 100vh;
   }
   
-  // Estilos para cada tarjeta
   .site-card {
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
@@ -25,7 +24,6 @@
       box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
     }
   
-    // Imagen dentro de la tarjeta
     img {
       width: 100%;
       height: 200px;
@@ -61,7 +59,6 @@
     }
   }
   
-  // Ajustes responsive para móviles
   @media (max-width: 768px) {
     .grid-container {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
