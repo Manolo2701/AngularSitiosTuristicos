@@ -1,130 +1,155 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  padding: 16px;
+#listacontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
   width: 100%;
-  max-width: 100vh;
-  margin: auto;
-  background: linear-gradient(to bottom, #0077b6, #00a8e8, #90e0ef);
-  min-height: 100vh;
-  border-radius: 40px;
-  
+}
 
-} 
+#home-container{
+  gap:10px;
+}
 
-h3{
+h3 {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 70px;
-  color: #0473c3; 
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: glow 1.5s infinite alternate;
+  font-size: 50px;
+  color: #0473c3;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: glow 1.5s infinite alternate;
 }
 
 @keyframes glow {
   from {
-      text-shadow: 0 0 5px #0473c3, 0 0 10px #0e83d6;
+    text-shadow: 0 0 5px #0473c3, 0 0 10px #0e83d6;
   }
+
   to {
-      text-shadow: 0 0 10px #FFD700, 0 0 15px #FFEA70;
+    text-shadow: 0 0 10px #FFD700, 0 0 15px #FFEA70;
   }
 }
 
-.site-card {
-  max-width: 100%;
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   width: 100%;
-  box-sizing: border-box;
-  
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+
+.site-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
-  }
-
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
-  }
-
-  mat-card-header {
-    text-align: center;
-    background: rgba(0, 119, 182, 0.1);
-    padding: 10px;
-  }
-
-  mat-card-title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #003f88;
-  }
-
-  mat-card-content {
-    padding: 15px;
-    color: #333;
-  }
-
-  mat-card-actions {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-  }
-
-  button {
-    font-weight: bold;
-  }
-}
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  height: 100%;
 }
 
-.site-card {
-  max-width: 100%;
+
+.site-card mat-card-header {
+  text-align: center;
+  background: rgba(0, 119, 182, 0.1);
+  padding: 10px;
+}
+
+
+.site-card mat-card-content {
+  padding: 15px;
+  color: #333;
+  flex-grow: 1;
+}
+
+
+.site-card mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+.ranking-container {
   width: 100%;
-  box-sizing: border-box;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
+.ranking-card {
+  width: 100%;
+  min-height: 300px;
+  padding: 20px;
+  background-color: #ffeb3b;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-@media (max-width: 600px) {
-  .grid-container {
-      grid-template-columns: 1fr; 
-      padding: 8px;
+.site-card img {
+  width: 100%;
+  height: 160px;
+  /* Reducido un poco */
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+//Moviles
+@media (max-width: 412px) {
+  .site-card img {
+    width: 100%;
+    height: 140px;
+    display: block;
   }
 
   .site-card {
-      max-width: 90%; 
-      margin: 0 auto; 
-      padding: 8px;
+    width: 70%;
+    margin-right: 40px;
   }
 
-  mat-card-title {
-      font-size: 1.2rem;
+  .grid-container {
+    margin-top: 5px;
+    align-items: center;
+    justify-items: center;
+  }
+}
+
+//Tablet vertical
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
   }
 
-  mat-card-content p {
-      font-size: 0.9rem; 
+  .site-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+//Tablet horizontal:
+@media (max-width: 1024px) {
+  body {
+    font-size: 17px;
   }
 
-  mat-card-actions {
-      display: flex;
-      justify-content: center;
+  .grid-container{
+    margin-top: 5px;
+    align-items: center;
+    justify-items: center;
   }
-
-  button {
-      font-size: 0.9rem; 
+  .site-card {
+    width: 70%; /* Dos tarjetas por fila */
+    margin: 10px;
   }
 }

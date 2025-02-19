@@ -4,11 +4,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { SitiosService, Sitio } from '../../services/sitios.service';
+import { RankingLugaresComponent } from '../ranking-lugares/ranking-lugares.component';
 
 @Component({
   selector: 'app-lista-sitios',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, RouterModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, RouterModule, RankingLugaresComponent],
   templateUrl: './lista-sitios.component.html',
   styleUrls: ['./lista-sitios.component.scss']
 })

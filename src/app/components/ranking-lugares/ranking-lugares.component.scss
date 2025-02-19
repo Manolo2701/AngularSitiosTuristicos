@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.ranking-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ranking-card {
+    background: linear-gradient(to bottom, rgb(232, 244, 130), #ffffff);
+    width: 100%;
+    max-width: 600px;
+    min-height: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .ranking-card {
+        max-width: 100%;
+        min-height: 400px;
+    }
+}

@@ -16,7 +16,7 @@
         "./assets/imgs/img0-7.jpg",
         "./assets/imgs/img0-8.jpg"
       ],
-      "rating": [],
+      "rating": ["3"],
       "comments": [],
       "commentUser": [],
       "id": "cadiz_catedral"
@@ -66,7 +66,7 @@
         "assets/imgs/img2-8.jpg",
         "assets/imgs/img2-9.jpg"
       ],
-      "rating": [],
+      "rating": ["5"],
       "comments": [],
       "commentUser": [],
       "id": "552a"
@@ -116,7 +116,7 @@
         "assets/imgs/img3-8.jpg",
         "assets/imgs/img3-9.jpg"
       ],
-      "rating": [],
+      "rating": ["8"],
       "comments": [],
       "commentUser": [],
       "id": "f011"
@@ -159,7 +159,7 @@
         "./assets/imgs/img0-7.jpg",
         "./assets/imgs/img0-8.jpg"
       ],
-      "rating": [],
+      "rating": ["10"],
       "comments": [],
       "commentUser": [],
       "id": "tomito"
