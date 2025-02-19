@@ -1,7 +1,7 @@
+<h3>Lugares de interés de Cádiz</h3>
 <div class="grid-container">
     <mat-card *ngFor="let sitio of sitios" class="site-card">
        <img mat-card-image [src]="sitio.imageUrl" [alt]="sitio.name">
-
         <mat-card-header>
             <mat-card-title>{{ sitio.name }}</mat-card-title>
         </mat-card-header>
@@ -13,3 +13,4 @@
         </mat-card-actions>
     </mat-card>
 </div>
+

@@ -142,6 +142,27 @@
       "comments": [],
       "commentUser": [],
       "id": "fee5"
+    },
+    {
+      "name": "Tomito",
+      "description": "La gata más bonita de toda la provincia de Cádiz ",
+      "parrafo1": "Su maullido es capaz de derretir a todo el que la escucha",
+      "parrafo2": "Horario: Cuando no está en su resort vacacional",
+      "imageUrl": "assets/imgs/imgt-0.jpg",
+      "imageGallery": [
+        "./assets/imgs/img7-1.jpg",
+        "./assets/imgs/img7-2.jpg",
+        "./assets/imgs/img7-3.jpg",
+        "./assets/imgs/img7-4.jpg",
+        "./assets/imgs/img7-5.jpg",
+        "./assets/imgs/img7-6.jpg",
+        "./assets/imgs/img0-7.jpg",
+        "./assets/imgs/img0-8.jpg"
+      ],
+      "rating": [],
+      "comments": [],
+      "commentUser": [],
+      "id": "tomito"
     }
   ],
   "users": [
