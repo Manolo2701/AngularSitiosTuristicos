@@ -167,6 +167,20 @@
   ],
   "users": [
     {
+      "id": "daniel",
+      "firstName": "user",
+      "lastName": "prueba",
+      "comunidad": "Andalucía",
+      "email": "admin@admin.com",
+      "role": "administrador",
+      "birthday": "2024-03-06",
+      "gender": "otro",
+      "phone": "999",
+      "password": "1234"
+
+
+    },
+    {
       "id": "51db",
       "firstName": "user",
       "lastName": "prueba",

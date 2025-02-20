@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Mi Proyecto</span>
+
+  <span class="spacer"></span>
+
+  <button *ngIf="!isAuthenticated" mat-button (click)="goToLogin()">Login</button>
+
+  <button *ngIf="isAuthenticated" mat-button (click)="logout()">Logout</button>
+
+  <button *ngIf="role === 'administrador'" mat-button (click)="addNewSite()">Añadir Sitio</button>
+</mat-toolbar>

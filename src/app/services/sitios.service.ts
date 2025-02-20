@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs';
+import { User } from '../user.model'; // Importamos el modelo de User
 
 export interface Sitio {
   id: string;
@@ -25,7 +26,7 @@ export class SitiosService {
   getSitios(): Observable<Sitio[]> {
     return this.http.get<Sitio[]>(this.apiURL);
   }
-  
+
   getLugaresMejorValorados(): Observable<Sitio[]> {
     return this.http.get<Sitio[]>(this.apiURL).pipe(
       map((sitios: Sitio[]) =>
@@ -57,11 +58,10 @@ export class SitiosService {
       })
     );
   }
-  
 
+  private usersUrl = 'http://localhost:3000/users'; // Asegúrate de que esta URL sea correcta
 
-
-
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);  
+  }
 }
-
-

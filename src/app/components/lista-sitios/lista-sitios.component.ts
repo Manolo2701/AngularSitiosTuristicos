@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 import { SitiosService, Sitio } from '../../services/sitios.service';
 import { RankingLugaresComponent } from '../ranking-lugares/ranking-lugares.component';
 import { ComentariosComponent } from '../comentarios/comentarios.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-lista-sitios',
   standalone: true,
   imports: [CommonModule, MatCardModule,
     MatButtonModule, RouterModule,
-    RankingLugaresComponent, ComentariosComponent],
+    RankingLugaresComponent, ComentariosComponent,
+    NavbarComponent],
   templateUrl: './lista-sitios.component.html',
   styleUrls: ['./lista-sitios.component.scss']
 })
