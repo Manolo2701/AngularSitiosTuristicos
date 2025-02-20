@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs';
-import { User } from '../user.model'; // Importamos el modelo de User
+import { User } from '../user.model'; 
 
 export interface Sitio {
   id: string;
@@ -31,7 +31,7 @@ export class SitiosService {
     return this.http.get<Sitio[]>(this.apiURL).pipe(
       map((sitios: Sitio[]) =>
         sitios
-          .filter((sitio: Sitio) => sitio.rating.length > 0) // ✅ Filtramos los que tienen ratings
+          .filter((sitio: Sitio) => sitio.rating.length > 0)
           .sort((a: Sitio, b: Sitio) => {
             const ratingA = a.rating.reduce((sum, r) => sum + r, 0) / a.rating.length;
             const ratingB = b.rating.reduce((sum, r) => sum + r, 0) / b.rating.length;
@@ -59,7 +59,7 @@ export class SitiosService {
     );
   }
 
-  private usersUrl = 'http://localhost:3000/users'; // Asegúrate de que esta URL sea correcta
+  private usersUrl = 'http://localhost:3000/users'; 
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);  
