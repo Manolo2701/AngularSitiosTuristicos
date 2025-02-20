@@ -11,3 +11,5 @@ Creación de Rama: Para asegurar que el desarrollo e implementación del servici
 3º Commit: servicio y consumición de la API generados. Css básico implementado.
 
 4º Commit: Css variados y comienzo de escritura de pasos en readme.md.
+
+5º Commit: Importación de las imágenes correcta.

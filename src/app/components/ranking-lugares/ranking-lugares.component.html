@@ -7,7 +7,7 @@
       <mat-list>
         <mat-list-item *ngFor="let sitio of lugaresMejorValorados; let i = index">
           <span class="ranking-position">{{ i + 1 }}.</span>
-          <span class="sitio-nombre">{{ sitio.name }}</span>
+          <span class="sitio-nombre"> {{ sitio.name }} </span>
           <span class="sitio-rating" *ngIf="sitio.rating && sitio.rating.length > 0">
             ⭐ {{ (getAverageRating(sitio.rating)) | number:'1.1-1' }}
           </span>      
