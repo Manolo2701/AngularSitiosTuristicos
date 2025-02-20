@@ -17,3 +17,5 @@ Creación de Rama: Para asegurar que el desarrollo e implementación del servici
 6º Commit: Terminado el rating y retocado el css del listado de tarjetas.
 
 7º Commit: Actualizado el readme.md
+
+8º Commit: Finalizado el carrusel que muestra comentarios.

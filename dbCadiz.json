@@ -17,13 +17,13 @@
         "./assets/imgs/img0-8.jpg"
       ],
       "rating": ["3"],
-      "comments": [],
-      "commentUser": [],
+      "comments": ["Hasta a SanPitoPato le ha gustado"],
+      "commentUser": ["Manuel"],
       "id": "cadiz_catedral"
     },
     {
       "name": "Playa de la Caleta",
-      "description": "Una de las playas más emblemáticas de Cádiz, rodeada de historia y con vistas espectaculares.",
+      "description": "Una de las playas más emblemáticas de Cádiz, rodeada de historia y con vistas espectaculares. Llena de algas, eso sí",
       "parrafo1": "Playa ubicada entre dos castillos, con arena dorada y aguas tranquilas.",
       "parrafo2": "Ideal para disfrutar del atardecer en la ciudad de Cádiz..",
       "imageUrl": "assets/imgs/img1-0.jpg",
@@ -42,19 +42,19 @@
         "4"
       ],
       "comments": [
-        "opinión user"
+        "Iug, algas..."
       ],
       "commentUser": [
-        "51db"
+        "Cualquiera con 2 dedos de frente"
       ],
       "id": "playa_caleta"
     },
     {
-      "name": "Lugar 3",
-      "description": "Descripción lugar 3 Descripción lugar 3 Descripción lugar 3",
-      "parrafo1": "Párrafo 1 lugar 3",
-      "parrafo2": "Párrafo 2 lugar 3",
-      "imageUrl": "assets/imgs/img2-0.jpg",
+      "name": "I.E.S Fernando Aguilar Quignon",
+      "description": "Instituto de educación secundaria y FP",
+      "parrafo1": "Lugar de aprendizaje de la titulación de E.S.O y puzles deslizantes",
+      "parrafo2": "Sobre todo de puzles deslizantes...",
+      "imageUrl": "assets/imgs/img5-0.jpg",
       "imageGallery": [
         "assets/imgs/img2-1.jpg",
         "assets/imgs/img2-2.jpg",
@@ -67,15 +67,15 @@
         "assets/imgs/img2-9.jpg"
       ],
       "rating": ["5"],
-      "comments": [],
-      "commentUser": [],
+      "comments": ["2 años echando pre inscripción para D.A.M y me la deniegan..."],
+      "commentUser": ["Daniel"],
       "id": "552a"
     },
     {
-      "name": "Lugar 4",
-      "description": "Descripción Lugar 4 Descripción Lugar 4 Descripción Lugar 4",
-      "parrafo1": "Párrafo 1 Lugar 4",
-      "parrafo2": "Párrafo 2 Lugar 4",
+      "name": "Playa de la Victoria",
+      "description": "La mejor quizás quitando a Cortadura",
+      "parrafo1": "Si te gustan las olas y nadar, tienes kilómetros y kilómetros para hacerlo. ",
+      "parrafo2": "Pero para mariscar no vayas, que no vas a coger nada.",
       "imageUrl": "assets/imgs/img2-0.jpg",
       "imageGallery": [
         "assets/imgs/img2-1.jpg",
@@ -92,18 +92,18 @@
         "3"
       ],
       "comments": [
-        "la opinión o comentario del usuario"
+        "Perfecta para ese bocadillo de tortilla con pan blandurrio por el viento cargado de sal."
       ],
       "commentUser": [
-        "51db"
+        "Se ha encontrado un niño de 6 años rubio, de ojos azules y que responde al nombre de Pedro. Por favor, que vengan sus padres a recogerlo"
       ],
       "id": "08e5"
     },
     {
-      "name": "Lugar 5",
-      "description": "Descripción Lugar 5 Descripción Lugar 5 Descripción Lugar 5",
-      "parrafo1": "Párrafo 1 Lugar 5",
-      "parrafo2": "Párrafo 2 Lugar 5",
+      "name": "Restaurante chino Nanking",
+      "description": "Aquí hacen un cerdo agridulce que lo flipas",
+      "parrafo1": "Los leones de su entrada son antíguos y bien conservados",
+      "parrafo2": "Es el restaurante Chino más conocido de Cádiz",
       "imageUrl": "assets/imgs/img3-0.jpg",
       "imageGallery": [
         "assets/imgs/img3-1.jpg",
@@ -117,16 +117,16 @@
         "assets/imgs/img3-9.jpg"
       ],
       "rating": ["8"],
-      "comments": [],
-      "commentUser": [],
+      "comments": ["Dios mio el pollo al limón está que te c..."],
+      "commentUser": ["Andrés Siniestra"],
       "id": "f011"
     },
     {
-      "name": "Lugar 6",
-      "description": "Descripción Lugar 6 Descripción Lugar 6 Descripción Lugar 6 ",
-      "parrafo1": "Párrafo 1 Lugar 6",
-      "parrafo2": "Párrafo 2 Lugar 6",
-      "imageUrl": "assets/imgs/img4-0.jpg",
+      "name": "Monumento Constitución 1812",
+      "description": "Conmemoración de la primera Constitución de Europa ",
+      "parrafo1": "La misma que el rey apodado 'El deseado' abolió a un par de años de regresar a España",
+      "parrafo2": "La misma que abolió utilizando a los mismos que habían invadido su país y matado a su pueblo.",
+      "imageUrl": "assets/imgs/img9-0.jpg",
       "imageGallery": [
         "assets/imgs/img4-1.jpg",
         "assets/imgs/img4-2.jpg",
@@ -160,8 +160,8 @@
         "./assets/imgs/img0-8.jpg"
       ],
       "rating": ["10"],
-      "comments": [],
-      "commentUser": [],
+      "comments": ["Mi caña de azucar moreno preciosa"],
+      "commentUser": ["Daniel"],
       "id": "tomito"
     }
   ],

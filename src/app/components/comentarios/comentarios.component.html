@@ -1,0 +1,9 @@
+<div class="comentarios-container" *ngIf="comentarios.length > 0">
+    <mat-card class="comentario-card">
+      <mat-card-content>
+        <p class="comentario-texto">"{{ comentarios[currentCommentIndex].comment }}"</p>
+        <p class="comentario-autor">- {{ comentarios[currentCommentIndex].user }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

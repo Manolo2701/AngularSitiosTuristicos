@@ -40,6 +40,28 @@ export class SitiosService {
     );
   }
 
+  getRandomComments(count: number = 5): Observable<{ comment: string; user: string }[]> {
+    return this.getSitios().pipe(
+      map(sitios => {
+        let allComments: { comment: string; user: string }[] = [];
+  
+        sitios.forEach(sitio => {
+          if (sitio.comments && sitio.commentUser) {
+            sitio.comments.forEach((comment, index) => {
+              allComments.push({ comment, user: sitio.commentUser[index] || 'Anónimo' });
+            });
+          }
+        });
+  
+        return allComments.sort(() => 0.5 - Math.random()).slice(0, count);
+      })
+    );
+  }
+  
+
+
+
+
 }
 
 
