@@ -13,3 +13,7 @@ Creación de Rama: Para asegurar que el desarrollo e implementación del servici
 4º Commit: Css variados y comienzo de escritura de pasos en readme.md.
 
 5º Commit: Importación de las imágenes correcta.
+
+6º Commit: Terminado el rating y retocado el css del listado de tarjetas.
+
+7º Commit: Actualizado el readme.md
