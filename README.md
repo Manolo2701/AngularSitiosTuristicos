@@ -23,3 +23,5 @@ Creación de Rama: Para asegurar que el desarrollo e implementación del servici
 9º Commit: Login implementado, falta el CSS correspondiente y Responsive.
 
 10º Commit: Mejora de navbar y login. Css integrado.
+
+11º Commit: Terminada la inserción de tarjetas nuevas y su visualización.

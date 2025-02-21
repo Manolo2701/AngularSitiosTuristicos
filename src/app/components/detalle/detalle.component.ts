@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { SitiosService, Sitio } from '../../services/sitios.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-detalle',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, NavbarComponent],
   templateUrl: './detalle.component.html',
   styleUrls: ['./detalle.component.scss']
 })

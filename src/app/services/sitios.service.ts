@@ -20,6 +20,7 @@ export interface Sitio {
 @Injectable({ providedIn: 'root' })
 export class SitiosService {
   private apiURL = 'http://localhost:3000/sitios';
+  private lugaresURL = 'http://localhost:3000/lugares'; // URL para agregar nuevos sitios
 
   constructor(private http: HttpClient) { }
 
@@ -59,9 +60,18 @@ export class SitiosService {
     );
   }
 
-  private usersUrl = 'http://localhost:3000/users'; 
 
+  private usersUrl = 'http://localhost:3000/users'; 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);  
+  }
+
+
+  addNewSite(site: Sitio): Observable<Sitio> {
+    return this.http.post<Sitio>(this.apiURL, site); // Usar la URL correcta
+  }
+
+  getSitioById(id: string): Observable<Sitio> {
+    return this.http.get<Sitio>(`${this.apiURL}/${id}`);
   }
 }

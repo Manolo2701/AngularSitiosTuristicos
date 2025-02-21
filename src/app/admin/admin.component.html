@@ -1,10 +1,75 @@
 <mat-card>
-    <mat-card-header>
-      <mat-card-title>Área Administrativa</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Bienvenido, Administrador. Aquí puedes gestionar las localizaciones.</p>
-     
-    </mat-card-content>
-  </mat-card>
-  
+  <mat-card-header>
+    <mat-card-title>Área Administrativa</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Bienvenido, Administrador. Aquí puedes gestionar las localizaciones.</p>
+    <form (ngSubmit)="addNewSite()">
+      <div>
+        <label for="name">Nombre</label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="newSite.name"
+          name="name"
+          required
+          placeholder="Nombre del sitio"
+        />
+      </div>
+      <div>
+        <label for="description">Descripción</label>
+        <input
+          id="description"
+          type="text"
+          [(ngModel)]="newSite.description"
+          name="description"
+          required
+          placeholder="Descripción del sitio"
+        />
+      </div>
+      <div>
+        <label for="location">Ubicación</label>
+        <input
+          id="location"
+          type="text"
+          [(ngModel)]="newSite.location"
+          name="location"
+          required
+          placeholder="Ubicación del sitio"
+        />
+      </div>
+      <div>
+        <label for="parrafo1">Párrafo 1</label>
+        <textarea
+          id="parrafo1"
+          [(ngModel)]="newSite.parrafo1"
+          name="parrafo1"
+          required
+          placeholder="Párrafo introductorio"
+        ></textarea>
+      </div>
+      <div>
+        <label for="parrafo2">Párrafo 2</label>
+        <textarea
+          id="parrafo2"
+          [(ngModel)]="newSite.parrafo2"
+          name="parrafo2"
+          required
+          placeholder="Detalles adicionales"
+        ></textarea>
+      </div>
+      <div>
+        <label for="imageUrl">URL de la imagen</label>
+        <input
+          id="imageUrl"
+          type="text"
+          [(ngModel)]="newSite.imageUrl"
+          name="imageUrl"
+          required
+          placeholder="URL de la imagen"
+        />
+      </div>
+      <button type="submit" [disabled]="!newSite.name || !newSite.description || !newSite.location || !newSite.imageUrl">Añadir Sitio</button>
+    </form>
+  </mat-card-content>
+</mat-card>

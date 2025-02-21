@@ -34,7 +34,7 @@ export class NavbarComponent {
   }
 
   goToRegister(): void {
-    this.router.navigate(['/register']); // Asegúrate de que esta ruta existe
+    this.router.navigate(['/register']);
   }
 
   addNewSite(): void {

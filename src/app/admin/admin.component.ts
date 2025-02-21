@@ -1,15 +1,83 @@
 import { Component } from '@angular/core';
-import { MatCardModule, MatCardTitle } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SitiosService } from '../services/sitios.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  imports: [MatCardModule, MatSnackBarModule, MatToolbarModule, MatCardTitle]
+  imports: [MatCardModule, MatButtonModule, CommonModule, FormsModule]
 })
 export class AdminComponent {
-  
+  newSite = {
+    id: '',
+    name: '',
+    description: '',
+    location: '',
+    imageUrl: '',
+    parrafo1: '',
+    parrafo2: '',
+    imageGallery: [],
+    rating: [],
+    comments: [],
+    commentUser: []
+  };
+
+  sitios: any[] = [];
+
+  constructor(private sitiosService: SitiosService, private snackBar: MatSnackBar) {
+    this.loadSitios();
+  }
+
+
+  addNewSite(): void {
+    if (this.newSite.name && this.newSite.description && this.newSite.location && this.newSite.imageUrl && this.newSite.parrafo1 && this.newSite.parrafo2) {
+      const newSiteWithId = {
+        ...this.newSite,
+        id: uuidv4()
+      };
+
+      this.sitiosService.addNewSite(newSiteWithId).subscribe(
+        (response) => {
+          this.snackBar.open('Sitio añadido con éxito', 'Cerrar', { duration: 3000 });
+          this.loadSitios();
+          this.resetForm();
+        },
+        (error) => {
+          this.snackBar.open('Error al añadir el sitio', 'Cerrar', { duration: 3000 });
+        }
+      );
+    } else {
+      this.snackBar.open('Por favor, completa todos los campos.', 'Cerrar', { duration: 3000 });
+    }
+  }
+
+
+  loadSitios(): void {
+    this.sitiosService.getSitios().subscribe(sitios => {
+      this.sitios = sitios;
+    });
+  }
+
+  resetForm(): void {
+    this.newSite = {
+      id: '',
+      name: '',
+      description: '',
+      location: '',
+      imageUrl: '',
+      parrafo1: '',
+      parrafo2: '',
+      imageGallery: [],
+      rating: [],
+      comments: [],
+      commentUser: []
+    };
+  }
 }
