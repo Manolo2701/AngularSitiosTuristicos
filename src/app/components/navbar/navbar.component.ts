@@ -38,7 +38,7 @@ export class NavbarComponent {
   }
 
   addNewSite(): void {
-    this.router.navigate(['/add-site']);
+    this.router.navigate(['/add-site']); 
   }
 }
 

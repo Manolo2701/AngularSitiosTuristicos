@@ -6,13 +6,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
+import { NavbarComponent } from "../components/navbar/navbar.component";
 
 @Component({
   selector: 'app-admin',
   standalone: true,
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  imports: [MatCardModule, MatButtonModule, CommonModule, FormsModule]
+  imports: [MatCardModule, MatButtonModule, CommonModule, FormsModule, NavbarComponent]
 })
 export class AdminComponent {
   newSite = {

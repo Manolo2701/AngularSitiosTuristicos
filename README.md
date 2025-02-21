@@ -25,3 +25,5 @@ Creación de Rama: Para asegurar que el desarrollo e implementación del servici
 10º Commit: Mejora de navbar y login. Css integrado.
 
 11º Commit: Terminada la inserción de tarjetas nuevas y su visualización.
+
+12 Commitº : Terminadas las funciones del administrador.

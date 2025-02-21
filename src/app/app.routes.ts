@@ -13,9 +13,11 @@ export const routes: Routes = [
     loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent),
     canActivate: [AdminGuard]
   },
+  { path: 'add-site', loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent), canActivate: [AdminGuard] },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: 'login' },
   { path: 'register', component: RegisterComponent },
+
 ];
 
 
