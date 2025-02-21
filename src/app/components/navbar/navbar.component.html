@@ -12,12 +12,6 @@
 }
 
 
-img {
-  width: 50px;
-  margin-left: 20px;
-  border-radius: 10px;
-  padding-top: 5px;
-}
 
 #button-container {
   display: flex;
@@ -52,6 +46,20 @@ button:hover {
   color: white;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+img {
+  width: 50px;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding-top: 5px;
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+
+img:hover {
+  filter: brightness(1.5); 
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7); 
+}
+
 
 
   @media (max-width: 412px) {

@@ -5,14 +5,16 @@ import { SitiosService } from '../../services/sitios.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../navbar/navbar.component";  
+import { MatCard } from '@angular/material/card';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, NavbarComponent]
+  imports: [FormsModule, CommonModule, NavbarComponent, MatCard]
 })
+
 export class LoginComponent {
   email: string = '';
   password: string = '';
