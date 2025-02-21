@@ -6,7 +6,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';  
 
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -34,7 +33,12 @@ export class NavbarComponent {
     this.router.navigate(['/login']);
   }
 
+  goToRegister(): void {
+    this.router.navigate(['/register']); // Asegúrate de que esta ruta existe
+  }
+
   addNewSite(): void {
     this.router.navigate(['/add-site']);
   }
 }
+

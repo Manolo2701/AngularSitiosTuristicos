@@ -3,6 +3,7 @@ import { ListaSitiosComponent } from './components/lista-sitios/lista-sitios.com
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { AdminGuard } from './guards/admin.guard';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
   { path: '', component: ListaSitiosComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: 'login' },
+  { path: 'register', component: RegisterComponent },
 ];
 
 

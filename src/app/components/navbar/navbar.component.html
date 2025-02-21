@@ -1,11 +1,90 @@
-<mat-toolbar color="primary">
-  <span>Mi Proyecto</span>
+<style>
+  .spacer {
+  flex: 1 1 auto;
+}
 
+::ng-deep mat-toolbar {
+  background-color: black !important;
+  color: white !important;
+  font-size: 18px !important;
+  border-radius: 0 0 5px 5px !important;
+  padding: 10px 20px;
+}
+
+
+img {
+  width: 50px;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding-top: 5px;
+}
+
+#button-container {
+  display: flex;
+  gap: 15px; 
+  align-items: center;
+  padding-right: 50px;
+}
+
+
+button {
+  width: 120px;
+  height: 35px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #0077b6, #00b4d8);
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+button:hover {
+  background: linear-gradient(45deg, #00b4d8, #0077b6);
+  transform: translateY(-3px) scale(1.05); 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); 
+}
+
+#linkindex{
+  text-decoration: none;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+  @media (max-width: 412px) {
+    button {
+      max-width: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    button {
+      max-width: 50px;
+    }
+
+  }
+
+
+  @media (max-width: 1024px) {
+    button {
+      max-width: 50px;
+    }
+  }
+</style>
+
+<mat-toolbar>
+  <a href="/" id="linkindex"><span>Ayuntamiento de Cádiz </span></a>
+  <a href="https://institucional.cadiz.es/portada_2017" target="_blank">
+    <img src="../../../assets/imgs/ayun-cadiz-logo.png">
+  </a>
   <span class="spacer"></span>
-
-  <button *ngIf="!isAuthenticated" mat-button (click)="goToLogin()">Login</button>
-
-  <button *ngIf="isAuthenticated" mat-button (click)="logout()">Logout</button>
-
-  <button *ngIf="role === 'administrador'" mat-button (click)="addNewSite()">Añadir Sitio</button>
+  <div id="button-container">
+    <button *ngIf="!isAuthenticated" mat-button (click)="goToLogin()">Login</button>
+    <button *ngIf="!isAuthenticated" mat-button (click)="goToRegister()">Registrarse</button>
+    <button *ngIf="isAuthenticated" mat-button (click)="logout()">Logout</button>
+    <button *ngIf="role === 'administrador'" mat-button (click)="addNewSite()">Añadir Sitio</button>
+  </div>
 </mat-toolbar>

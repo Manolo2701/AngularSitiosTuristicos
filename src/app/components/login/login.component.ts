@@ -3,14 +3,15 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { SitiosService } from '../../services/sitios.service';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { NavbarComponent } from "../navbar/navbar.component";  
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, NavbarComponent]
 })
 export class LoginComponent {
   email: string = '';

@@ -21,3 +21,5 @@ Creación de Rama: Para asegurar que el desarrollo e implementación del servici
 8º Commit: Finalizado el carrusel que muestra comentarios.
 
 9º Commit: Login implementado, falta el CSS correspondiente y Responsive.
+
+10º Commit: Mejora de navbar y login. Css integrado.

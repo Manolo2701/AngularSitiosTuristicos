@@ -18,6 +18,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   templateUrl: './lista-sitios.component.html',
   styleUrls: ['./lista-sitios.component.scss']
 })
+
 export class ListaSitiosComponent implements OnInit {
   sitios: Sitio[] = [];
 
