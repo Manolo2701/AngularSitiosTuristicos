@@ -47,4 +47,12 @@ export class AuthService {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
+
+  getUserData(): any {
+    const userData = localStorage.getItem('user');
+    return userData ? JSON.parse(userData) : null;
+  }
+
+
+
 }

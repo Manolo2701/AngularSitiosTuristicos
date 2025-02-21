@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators'; // Asegurar importación de switchMap
 import { User } from '../user.model'; 
 
 export interface Sitio {
@@ -20,7 +20,6 @@ export interface Sitio {
 @Injectable({ providedIn: 'root' })
 export class SitiosService {
   private apiURL = 'http://localhost:3000/sitios';
-  private lugaresURL = 'http://localhost:3000/lugares'; // URL para agregar nuevos sitios
 
   constructor(private http: HttpClient) { }
 
@@ -28,17 +27,23 @@ export class SitiosService {
     return this.http.get<Sitio[]>(this.apiURL);
   }
 
-  getLugaresMejorValorados(): Observable<Sitio[]> {
-    return this.http.get<Sitio[]>(this.apiURL).pipe(
-      map((sitios: Sitio[]) =>
-        sitios
-          .filter((sitio: Sitio) => sitio.rating.length > 0)
-          .sort((a: Sitio, b: Sitio) => {
-            const ratingA = a.rating.reduce((sum, r) => sum + r, 0) / a.rating.length;
-            const ratingB = b.rating.reduce((sum, r) => sum + r, 0) / b.rating.length;
-            return ratingB - ratingA;
-          })
-      )
+  getSitioById(id: string): Observable<Sitio> {
+    return this.http.get<Sitio>(`${this.apiURL}/${id}`);
+  }
+
+  addNewSite(site: Sitio): Observable<Sitio> {
+    return this.http.post<Sitio>(this.apiURL, site);
+  }
+
+  addCommentToSite(sitioId: string, comment: string, rating: number, user: string): Observable<Sitio> {
+    return this.getSitioById(sitioId).pipe(
+      map((sitio: Sitio) => ({
+        ...sitio,
+        comments: [...sitio.comments, comment],
+        rating: [...sitio.rating, rating],
+        commentUser: [...sitio.commentUser,user]
+      })),
+      switchMap((updatedSite: Sitio) => this.http.put<Sitio>(`${this.apiURL}/${sitioId}`, updatedSite))
     );
   }
 
@@ -60,18 +65,11 @@ export class SitiosService {
     );
   }
 
+  private usersUrl = 'http://localhost:3000/users'
 
-  private usersUrl = 'http://localhost:3000/users'; 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);  
+    return this.http.get<User[]>(this.usersUrl);
   }
 
 
-  addNewSite(site: Sitio): Observable<Sitio> {
-    return this.http.post<Sitio>(this.apiURL, site); // Usar la URL correcta
-  }
-
-  getSitioById(id: string): Observable<Sitio> {
-    return this.http.get<Sitio>(`${this.apiURL}/${id}`);
-  }
 }

@@ -1,0 +1,84 @@
+mat-card {
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+mat-card-header {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+}
+
+mat-card-content {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+mat-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+button {
+  margin: 10px 0;
+}
+
+h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+}
+
+input[type="number"] {
+  padding: 5px;
+  font-size: 1rem;
+  width: 60px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+mat-raised-button {
+  margin-top: 15px;
+}
+
+ng-template {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f44336;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
+
+strong {
+  color: #1976d2;
+}

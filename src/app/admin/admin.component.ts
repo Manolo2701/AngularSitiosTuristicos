@@ -13,7 +13,9 @@ import { NavbarComponent } from "../components/navbar/navbar.component";
   standalone: true,
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  imports: [MatCardModule, MatButtonModule, CommonModule, FormsModule, NavbarComponent]
+  imports: [MatCardModule, MatButtonModule,
+    CommonModule, FormsModule, 
+    NavbarComponent]
 })
 export class AdminComponent {
   newSite = {

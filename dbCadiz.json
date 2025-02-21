@@ -17,16 +17,29 @@
         "./assets/imgs/img0-8.jpg"
       ],
       "rating": [
-        "3"
+        "3",
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        5,
+        0,
+        0
       ],
       "comments": [
         "Hasta a SanPitoPato le ha gustado"
+      
       ],
       "commentUser": [
-        "Manuel"
+        "Pedrito"
       ],
       "id": "cadiz_catedral"
-    },
+    }, 
     {
       "name": "Playa de la Caleta",
       "description": "Una de las playas más emblemáticas de Cádiz",
@@ -107,7 +120,7 @@
         "Perfecta para ese bocadillo de tortilla con pan blandurrio por el viento cargado de sal."
       ],
       "commentUser": [
-        "Se ha encontrado un niño de 6 años rubio, de ojos azules y que responde al nombre de Pedro. Por favor, que vengan sus padres a recogerlo"
+        "Alguien"
       ],
       "id": "08e5"
     },
@@ -192,8 +205,8 @@
   "users": [
     {
       "id": "daniel",
-      "firstName": "user",
-      "lastName": "prueba",
+      "firstName": "Daniel",
+      "lastName": "Astorga",
       "comunidad": "Andalucía",
       "email": "admin@admin.com",
       "role": "administrador",
@@ -203,16 +216,16 @@
       "password": "1234"
     },
     {
-      "id": "51db",
-      "firstName": "user",
-      "lastName": "prueba",
+      "id": "daniel2",
+      "firstName": "Daniel",
+      "lastName": "Astorga",
       "comunidad": "Andalucía",
-      "email": "user@user.com",
+      "email": "daniel@daniel.com",
       "role": "usuario",
       "birthday": "2024-03-06",
       "gender": "otro",
       "phone": "999",
-      "password": "831c237928e6212bedaa4451a514ace3174562f6761f6a157a2fe5082b36e2fb"
+      "password": "daniel"
     },
     {
       "firstName": "Administrador",
