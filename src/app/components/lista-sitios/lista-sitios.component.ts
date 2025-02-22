@@ -23,7 +23,7 @@ export class ListaSitiosComponent implements OnInit {
   sitios: Sitio[] = [];
 
   constructor(private sitiosService: SitiosService) {}
-
+  //Coge todos los sitios de sitiosservice
   ngOnInit(): void {
     this.sitiosService.getSitios().subscribe((data) => {
       this.sitios = data;

@@ -38,27 +38,29 @@ export class DetalleComponent implements OnInit {
     }
   }
 
+  //Para añadir comentarios
   addComment(): void {
+    //COmprobación de que está autenticado:
     if (this.authService.isAuthenticated()) {
-      const user = this.authService.getUserData(); // Obtenemos los datos del usuario
-      const userName = `${user.firstName} ${user.lastName}`; // Concatenamos el nombre y apellido
+      const user = this.authService.getUserData(); 
+      const userName = `${user.firstName} ${user.lastName}`; 
   
-      // Aseguramos que userName sea un string
+
       const userNameString = String(userName);
   
-      const rating = Number(this.newRating); // Convertimos la puntuación a número
+      const rating = Number(this.newRating); 
   
+      //Para que no se puedan meter caracteres que no sean números
       if (isNaN(rating)) {
         alert('La puntuación debe ser un número válido.');
         return;
       }
-
-
+      //Usa sitiosservice para añadir el comentario
       this.sitiosService.addCommentToSite(this.sitio.id, this.newComment, rating, userNameString).subscribe(
         (updatedSite) => {
-          this.sitio = updatedSite; // Actualizamos el sitio con el nuevo comentario
-          this.newComment = ''; // Limpiamos el campo de comentario
-          this.newRating = null; // Limpiamos la puntuación
+          this.sitio = updatedSite; 
+          this.newComment = ''; 
+          this.newRating = null; 
         },
         (error) => {
           console.error('Error al agregar comentario', error);
@@ -68,9 +70,8 @@ export class DetalleComponent implements OnInit {
       alert('Por favor, inicie sesión para comentar.');
     }
   }
-
   
-
+  //Para volver a la página anterior (que si no el botón no funciona)
   goBack() {
     window.history.back();
   }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators'; // Asegurar importación de switchMap
+import { map, switchMap } from 'rxjs/operators';
 import { User } from '../user.model'; 
 
 export interface Sitio {
@@ -18,6 +18,7 @@ export interface Sitio {
 }
 
 @Injectable({ providedIn: 'root' })
+//Servicio para las funcioens de los sitios:
 export class SitiosService {
   private apiURL = 'http://localhost:3000/sitios';
 
@@ -70,6 +71,4 @@ export class SitiosService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
   }
-
-
 }

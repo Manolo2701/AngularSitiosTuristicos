@@ -18,28 +18,21 @@
       ],
       "rating": [
         "3",
-        8,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        5,
-        0,
-        5,
-        0,
-        0
+        5
       ],
       "comments": [
-        "Hasta a SanPitoPato le ha gustado"
-      
+        "Hasta a SanPitoPato le ha gustado",
+        "ffghjgfjhgf",
+        ""
       ],
       "commentUser": [
-        "Pedrito"
+        "Manuel",
+        "Daniel Astorga",
+        "user prueba"
       ],
       "id": "cadiz_catedral"
-    }, 
+    },
     {
       "name": "Playa de la Caleta",
       "description": "Una de las playas más emblemáticas de Cádiz",
@@ -120,7 +113,7 @@
         "Perfecta para ese bocadillo de tortilla con pan blandurrio por el viento cargado de sal."
       ],
       "commentUser": [
-        "Alguien"
+        "Se ha encontrado un niño de 6 años rubio, de ojos azules y que responde al nombre de Pedro. Por favor, que vengan sus padres a recogerlo"
       ],
       "id": "08e5"
     },
@@ -205,8 +198,8 @@
   "users": [
     {
       "id": "daniel",
-      "firstName": "Daniel",
-      "lastName": "Astorga",
+      "firstName": "user",
+      "lastName": "prueba",
       "comunidad": "Andalucía",
       "email": "admin@admin.com",
       "role": "administrador",
@@ -216,52 +209,28 @@
       "password": "1234"
     },
     {
-      "id": "daniel2",
-      "firstName": "Daniel",
-      "lastName": "Astorga",
-      "comunidad": "Andalucía",
-      "email": "daniel@daniel.com",
+      "id": "8f20",
+      "firstName": "frgtyur",
+      "lastName": "yutryut",
+      "email": "admrtyuin@admin.com",
+      "password": "$2b$10$mk85o4Zgelvj6o/gcCwozOi0LFxVoYLBElrpQow.1yX7Wv2U7.k1u",
+      "phone": "999999999",
+      "birthday": "2025-02-06",
+      "gender": "masculino",
       "role": "usuario",
-      "birthday": "2024-03-06",
-      "gender": "otro",
-      "phone": "999",
-      "password": "daniel"
+      "comunidad": "ghjkjhgkjhg"
     },
     {
-      "firstName": "Administrador",
-      "lastName": "apellidos",
-      "comunidad": "Andalucía",
-      "email": "admin@admin.com",
-      "role": "administrador",
-      "birthday": "1975-06-28",
+      "id": "418d",
+      "firstName": "hjklh",
+      "lastName": "kjhlkjh",
+      "email": "admlkjhin@admin.com",
+      "password": "$2b$10$B1RffDhWgw5i3IU47pphPOus6m/pjx0mPnvgVN8UKu2BtOoEgwYD6",
+      "phone": "999999999",
+      "birthday": "2025-02-25",
       "gender": "masculino",
-      "phone": "555",
-      "id": "n0ki1jI",
-      "password": "ac9689e2272427085e35b9d3e3e8bed88cb3434828b43b86fc0596cad4c6e270"
-    },
-    {
-      "id": "capol4va",
-      "firstName": "Usuario",
-      "lastName": "Apellido1 Apellido2",
-      "comunidad": "La Rioja",
-      "email": "usuario@usuario.com",
       "role": "usuario",
-      "birthday": "2025-01-21T23:00:00.000Z",
-      "gender": "masculino",
-      "phone": "956441122",
-      "password": "9250e222c4c71f0c58d4c54b50a880a312e9f9fed55d5c3aa0b0e860ded99165"
-    },
-    {
-      "id": "7j95tk4s",
-      "firstName": "ejemplo",
-      "lastName": "ejemplo",
-      "comunidad": "Andalucía",
-      "email": "ejemplo@ejemplo.com",
-      "role": "usuario",
-      "birthday": "2024-12-31T23:00:00.000Z",
-      "gender": "masculino",
-      "phone": "7777",
-      "password": "b1495ea4d3961a01e98e1f4eb54e5cfb7dcd6a4833ed445f0a63f658f8c0d7b8"
+      "comunidad": "jkljh"
     }
   ]
 }

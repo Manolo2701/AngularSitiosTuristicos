@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
 })
+
+//Secciones de autenticación y registro de usuarios:
 export class AuthService {
   constructor(private router: Router) {}
 
@@ -53,6 +55,25 @@ export class AuthService {
     return userData ? JSON.parse(userData) : null;
   }
 
+ 
+  registerUser(user: any): void {
+    const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+    existingUsers.push(user);
+    localStorage.setItem('users', JSON.stringify(existingUsers));
 
+    const token = this.generateToken(user);
+    this.login(token, user);
+  }
 
+  private generateToken(user: any): string {
+    const payload = {
+      userId: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      role: user.role,
+      exp: Math.floor(Date.now() / 1000) + 60 * 60, 
+    };
+
+    return btoa(JSON.stringify(payload)); 
+  }
 }

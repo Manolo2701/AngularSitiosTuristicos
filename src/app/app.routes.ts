@@ -6,7 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
-  { path: '', component: ListaSitiosComponent },
+  { path: '', component: ListaSitiosComponent }, 
   { path: 'detalle/:id', loadComponent: () => import('./components/detalle/detalle.component').then(m => m.DetalleComponent) },
   {
     path: 'admin',
@@ -15,9 +15,6 @@ export const routes: Routes = [
   },
   { path: 'add-site', loadComponent: () => import('./admin/admin.component').then(m => m.AdminComponent), canActivate: [AdminGuard] },
   { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: 'login' },
   { path: 'register', component: RegisterComponent },
-
+  { path: '**', redirectTo: 'login' }
 ];
-
-

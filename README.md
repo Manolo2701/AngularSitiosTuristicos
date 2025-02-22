@@ -27,3 +27,7 @@ Creación de Rama: Para asegurar que el desarrollo e implementación del servici
 11º Commit: Terminada la inserción de tarjetas nuevas y su visualización.
 
 12 Commitº : Terminadas las funciones del administrador.
+
+13º Commit: Terminada la funcionalidad de adición de comentarios del usuario registrado.
+
+14º Commit: Terminada la funcionalidad de encriptado de contraseña (con bcrypt) y registro.

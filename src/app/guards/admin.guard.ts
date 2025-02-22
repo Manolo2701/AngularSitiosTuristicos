@@ -9,6 +9,7 @@ import { AuthService } from '../services/auth.service';
 export class AdminGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) { }
 
+  //Para ver si es administrador
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot

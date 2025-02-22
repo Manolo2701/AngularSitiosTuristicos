@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './comentarios.component.html',
   styleUrls: ['./comentarios.component.scss']
 })
+
 export class ComentariosComponent implements OnInit, OnDestroy {
   comentarios: { comment: string; user: string }[] = [];
   currentCommentIndex = 0;
@@ -20,6 +21,7 @@ export class ComentariosComponent implements OnInit, OnDestroy {
 
   constructor(private sitiosService: SitiosService) {}
 
+  //Para iniciar cualquier cosa cuando la clase se exporta y carga
   ngOnInit(): void {
     this.subscription = this.sitiosService.getRandomComments(5).subscribe(comments => {
       this.comentarios = comments;
@@ -27,6 +29,7 @@ export class ComentariosComponent implements OnInit, OnDestroy {
     });
   }
 
+  //Intervalo de rotación del carrusel, cada 5 segunditos:
   startRotation(): void {
     this.intervalId = setInterval(() => {
       this.currentCommentIndex = (this.currentCommentIndex + 1) % this.comentarios.length;

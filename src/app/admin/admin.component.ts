@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SitiosService } from '../services/sitios.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar'; //Los mensajitos en negro
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
@@ -38,14 +38,14 @@ export class AdminComponent {
     this.loadSitios();
   }
 
-
+//Método para añadir sitios nuevos
   addNewSite(): void {
     if (this.newSite.name && this.newSite.description && this.newSite.location && this.newSite.imageUrl && this.newSite.parrafo1 && this.newSite.parrafo2) {
       const newSiteWithId = {
         ...this.newSite,
         id: uuidv4()
       };
-
+      //Se llama al método addnewite de sitiosService
       this.sitiosService.addNewSite(newSiteWithId).subscribe(
         (response) => {
           this.snackBar.open('Sitio añadido con éxito', 'Cerrar', { duration: 3000 });
@@ -61,13 +61,14 @@ export class AdminComponent {
     }
   }
 
-
+  //Carga todos los sitios usando sitiosService
   loadSitios(): void {
     this.sitiosService.getSitios().subscribe(sitios => {
       this.sitios = sitios;
     });
   }
 
+  //Limpia el formulario
   resetForm(): void {
     this.newSite = {
       id: '',
