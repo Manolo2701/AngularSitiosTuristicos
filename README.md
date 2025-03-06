@@ -29,9 +29,17 @@ Para hacer uso del proyecto, siga los siguientes pasos:
 
 # IMPORTANTE
 1. Si está en Windows y le sale el siguiente error al ejecutar el servidor: "npm : No se puede cargar el archivo C:\Program Files\nodejs\npm.ps1 porque la ejecución de scripts está deshabilitada en este sistema." debe hacer lo siguiente: Presione windows + S > Escriba powershell y ejecute como administrador > Inserte Get-ExecutionPolicy > Si sale "restricted" inserte Set-ExecutionPolicy RemoteSigned.
-2. Asegúrese de que las dependencias necesarias están en el proyecto: npm install en la raíz del proyecto.
+2. Asegúrese de que las dependencias necesarias están en el proyecto: "npm install" en la raíz del proyecto.
 
 # Información Extra
 1. Si inicia sesión como administrador, no será redirigido a ninguna página pero tendrá la opción de ir a los sitios manualmente o de administrarlos.
 2. Registrarse no implica iniciar sesión directamente, esto es intencionado, no vamos a forzar a un usuario a iniciar sesión si sólo quiere registrarse.
 3. Clicar el logo de la barra de navegación redirige a la página oficial del ayuntamiento de Extremadura.
+
+# Requisitos
+
+1. Instalar Node.js: https://nodejs.org.
+
+2. Instalar Angular Cli: npm install -g @angular/cli
+
+3. Instalar JSON Server: npm install -g json-server
