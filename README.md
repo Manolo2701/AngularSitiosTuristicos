@@ -1,7 +1,7 @@
 # Desarrollador
 Manuel Ramiro Barbado Sánchez
 
-A continuación de verá la documentación sobre la estructura y comportamiento del proyecto, si desea ver las instrucciones directamente, salte al apartado "Instrucciones de uso".
+A continuación se verá la documentación sobre la estructura y comportamiento del proyecto, si desea ver las instrucciones directamente, salte al apartado "Instrucciones de uso".
 
 
 # Descripción del proyecto
