@@ -26,3 +26,8 @@ Para hacer uso del proyecto, siga los siguientes pasos:
 3. Registre un usuario para hacer uso de la aplicacion.
 4. Si quiere entrar como administrador, use las credenciales "admin@extremadura.com" - "admin1"
 5. Si quiere crear nuevos usuarios manualmente, vaya al archivo dbExtr.json, añada usuarios al final del archivo con la misma estructura que los anteriores y para generar su contraseña vaya al archivo generate-hash.js, sustituya "admin1" por la contraseña que quiera encriptar e ingrese el siguiente comando en una terminal nueva dentro del proyecto: node generate-hash.js. Esto le dará la contraseña encriptada.
+
+# IMPORTANTE
+1. Si está en Windows y le sale el siguiente error al ejecutar el servidor: "npm : No se puede cargar el archivo C:\Program Files\nodejs\npm.ps1 porque la ejecución de scripts está deshabilitada en este sistema." debe hacer lo siguiente: Presione windows + S > Escriba powershell y ejecute como administrador > Inserte Get-ExecutionPolicy > Si sale "restricted" inserte Set-ExecutionPolicy RemoteSigned.
+2. Asegúrese de que las dependencias necesarias están en el proyecto: npm install en la raíz del proyecto.
+3. Si inicia sesión como administrador, no será redirigido a ninguna página pero tendrá la opción de ir a los sitios manualmente o de administrarlos.
