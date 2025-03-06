@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
+
+<!-- Mostrar si el sitio tiene datos -->
 <div *ngIf="sitio; else noData">
   <mat-card>
     <mat-card-header>
@@ -13,27 +15,35 @@
     <mat-card-actions>
       <button mat-button (click)="goBack()">Volver</button>
     </mat-card-actions>
+
+    <!-- Sección de comentarios -->
     <h3>Comentarios</h3>
-    <div *ngFor="let comment of sitio.comments; let i = index">
+    <div *ngFor="let comment of sitio.comments; let i = index" class="comment">
       <p><strong>{{ sitio.commentUser[i] }}</strong>: {{ comment }}</p>
     </div>
-  
+
+    <!-- Formulario para agregar comentario -->
     <h3>Deja tu comentario</h3>
-<div *ngIf="authService.isAuthenticated(); else notAuthenticated">
-  <textarea [(ngModel)]="newComment" placeholder="Escribe un comentario"></textarea>
-  <br>
-  <label>Puntuación: </label>
-  <input type="number" [(ngModel)]="newRating" min="1" max="5">
-  <br>
-  <button (click)="addComment()">Añadir comentario</button>
-</div>
-<ng-template #notAuthenticated>
-  <p>Debes iniciar sesión para dejar un comentario.</p>
-</ng-template>
+    <div *ngIf="authService.isAuthenticated(); else notAuthenticated">
+      <textarea [(ngModel)]="newComment" placeholder="Escribe un comentario" rows="4"></textarea>
+      <br>
+      <label>Puntuación: </label>
+      <input type="number" [(ngModel)]="newRating" min="1" max="5" placeholder="1 - 5">
+      <br>
+      <button (click)="addComment()" [disabled]="!newComment || newRating === null || newRating < 1 || newRating > 5">
+        Añadir comentario
+      </button>
+    </div>
+
+    <!-- Mensaje si el usuario no está autenticado -->
+    <ng-template #notAuthenticated>
+      <p>Debes iniciar sesión para dejar un comentario.</p>
+    </ng-template>
 
   </mat-card>
 </div>
 
+<!-- Mensaje si no se encuentra el sitio -->
 <ng-template #noData>
   <p>No se encontró el sitio.</p>
 </ng-template>

@@ -1,8 +1,8 @@
 @use '@angular/material' as mat;
 
-$primary-palette: mat.define-palette(mat.$blue-palette, 900);
-$accent-palette: mat.define-palette(mat.$pink-palette, A200);
-$warn-palette: mat.define-palette(mat.$red-palette);
+$primary-palette: mat.define-palette(mat.$indigo-palette, 800);  // Usando un color azul más oscuro
+$accent-palette: mat.define-palette(mat.$amber-palette, A400);  // Color más cálido
+$warn-palette: mat.define-palette(mat.$deep-orange-palette);  // Un rojo más intenso para advertencias
 
 $my-theme: mat.define-light-theme((
   color: (

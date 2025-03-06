@@ -1,19 +1,22 @@
 <div class="ranking-container">
-<mat-card class="ranking-card">
+  <mat-card class="ranking-card">
     <mat-card-header>
       <mat-card-title>🏆 Top mejores lugares</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-list>
+      <mat-list class="ranking-list">
         <mat-list-item *ngFor="let sitio of lugaresMejorValorados; let i = index">
-          <span class="ranking-position">{{ i + 1 }}.</span>
-          <span class="sitio-nombre"> {{ sitio.name }} </span>
-          <span class="sitio-rating" *ngIf="sitio.rating && sitio.rating.length > 0">
+          <span class="ranking-position" [attr.aria-label]="'Posición ' + (i + 1)">
+            {{ i + 1 }}.
+          </span>
+          <span class="sitio-nombre" [attr.aria-label]="'Nombre del lugar ' + sitio.name">
+            {{ sitio.name }}
+          </span>
+          <span class="sitio-rating" *ngIf="sitio.rating && sitio.rating.length > 0" [attr.aria-label]="'Valoración del sitio'">
             ⭐ {{ (getAverageRating(sitio.rating)) | number:'1.1-1' }}
           </span>      
         </mat-list-item>
       </mat-list>
     </mat-card-content>
   </mat-card>
-  
 </div>

@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { NavbarComponent } from '../navbar/navbar.component';
-import * as bcrypt from 'bcryptjs'; //COmo no me ha funcionado con crypto-js he probado con bcrypt
+import { RouterModule } from '@angular/router';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-register',
@@ -20,9 +21,9 @@ import * as bcrypt from 'bcryptjs'; //COmo no me ha funcionado con crypto-js he 
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    HttpClientModule,
     MatSelectModule,
-    NavbarComponent
+    NavbarComponent,
+    RouterModule
   ]
 })
 export class RegisterComponent {
@@ -37,56 +38,45 @@ export class RegisterComponent {
     role: string;
     comunidad: string;
   } = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      phone: '',
-      birthday: '',
-      gender: '',
-      role: 'usuario',
-      comunidad: ''
-    };
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    phone: '',
+    birthday: '',
+    gender: '',
+    role: 'usuario',  // Por defecto, el rol es 'usuario'
+    comunidad: ''
+  };
 
-  private apiUrl: string = 'http://localhost:3000/users';
+  private apiUrl: string = 'http://localhost:3000/users';  // API base para el registro de usuario
+
   constructor(private http: HttpClient) { }
 
+  // Función de registro de usuario
   register(): void {
     if (!this.validateInputs()) {
-      return;
+      return;  // Si la validación de inputs falla, no se continúa
     }
 
-
-    if (!this.user.password) {
-      alert('La contraseña no puede estar vacía.');
-      return;
-    }
-
-
+    // Cifra la contraseña antes de enviarla al backend
     const saltRounds = 10;
-    bcrypt.hash(this.user.password!, saltRounds, (err: Error | null, hashedPassword: string | undefined) => {
-      if (err) {
+    bcrypt.hash(this.user.password, saltRounds, (err, hashedPassword) => {
+      if (err || !hashedPassword) {
         console.error('Error al cifrar la contraseña', err);
-        alert('Error al cifrar la contraseña. Inténtalo de nuevo.');
+        alert('Error al cifrar la contraseña. Intenta de nuevo.');
         return;
       }
 
-      if (!hashedPassword) {
-        console.error('No se pudo generar el hash de la contraseña');
-        alert('Error al generar el hash de la contraseña. Inténtalo de nuevo.');
-        return;
-      }
+      this.user.password = hashedPassword;  // Asignamos la contraseña cifrada
 
-
-      this.user.password = hashedPassword as string;
-
-
+      // Realizamos la solicitud HTTP POST para registrar al usuario
       this.http.post(this.apiUrl, this.user).subscribe(
-        (response: any) => {
+        response => {
           console.log('Registro exitoso', response);
           alert('Usuario registrado correctamente.');
         },
-        (error: any) => {
+        error => {
           console.error('Error en el registro', error);
           alert('Error en el registro. Inténtalo de nuevo.');
         }
@@ -94,26 +84,31 @@ export class RegisterComponent {
     });
   }
 
-  //Valida los datos del formulario:
+  // Función de validación de inputs
   private validateInputs(): boolean {
     if (!this.user.firstName || !this.user.lastName || !this.user.email || !this.user.password) {
-      alert('Completa todos los campos obligatorios.');
+      alert('Por favor, completa todos los campos obligatorios.');
       return false;
     }
+
+    // Validación del formato del correo
     if (!this.validateEmail(this.user.email)) {
-      alert('El formato del correo no es válido.');
+      alert('El formato del correo electrónico no es válido.');
       return false;
     }
+
+    // Validación de la longitud de la contraseña
     if (this.user.password.length < 6) {
       alert('La contraseña debe tener al menos 6 caracteres.');
       return false;
     }
-    return true;
+
+    return true;  // Si pasa todas las validaciones
   }
 
-  //Valida el email con el regex típico de los emails:
+  // Función para validar el formato del correo electrónico
   private validateEmail(email: string): boolean {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(email);
+    return emailPattern.test(email);  // Devuelve si el correo tiene un formato válido
   }
 }

@@ -1,21 +1,20 @@
 import { Component } from '@angular/core';
 import { SitiosService } from '../services/sitios.service';
-import { MatSnackBar } from '@angular/material/snack-bar'; //Los mensajitos en negro
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
 import { NavbarComponent } from "../components/navbar/navbar.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
-  imports: [MatCardModule, MatButtonModule,
-    CommonModule, FormsModule, 
-    NavbarComponent]
+  imports: [MatCardModule, MatButtonModule, CommonModule, FormsModule, NavbarComponent, RouterModule]
 })
 export class AdminComponent {
   newSite = {
@@ -33,42 +32,51 @@ export class AdminComponent {
   };
 
   sitios: any[] = [];
+  isEditing = false;
+  originalSite: any = null;
 
   constructor(private sitiosService: SitiosService, private snackBar: MatSnackBar) {
     this.loadSitios();
   }
 
-//Método para añadir sitios nuevos
   addNewSite(): void {
-    if (this.newSite.name && this.newSite.description && this.newSite.location && this.newSite.imageUrl && this.newSite.parrafo1 && this.newSite.parrafo2) {
+    if (this.isValidSite(this.newSite)) {
       const newSiteWithId = {
         ...this.newSite,
         id: uuidv4()
       };
-      //Se llama al método addnewite de sitiosService
-      this.sitiosService.addNewSite(newSiteWithId).subscribe(
-        (response) => {
-          this.snackBar.open('Sitio añadido con éxito', 'Cerrar', { duration: 3000 });
+
+      this.sitiosService.addNewSite(newSiteWithId).subscribe({
+        next: () => {
+          this.snackBar.open('Sitio añadido', 'Cerrar', { duration: 3000 });
           this.loadSitios();
           this.resetForm();
         },
-        (error) => {
-          this.snackBar.open('Error al añadir el sitio', 'Cerrar', { duration: 3000 });
-        }
-      );
+        error: () => this.showError('Error añadiendo sitio')
+      });
     } else {
-      this.snackBar.open('Por favor, completa todos los campos.', 'Cerrar', { duration: 3000 });
+      this.showError('Completa todos los campos');
     }
   }
 
-  //Carga todos los sitios usando sitiosService
+  private isValidSite(site: any): boolean {
+    return !!site.name && 
+           !!site.description && 
+           !!site.location && 
+           !!site.imageUrl && 
+           !!site.parrafo1 && 
+           !!site.parrafo2;
+  }
+
   loadSitios(): void {
-    this.sitiosService.getSitios().subscribe(sitios => {
-      this.sitios = sitios;
+    this.sitiosService.getSitios().subscribe({
+      next: (sitios) => {
+        this.sitios = sitios.map(site => ({...site, editing: false}));
+      },
+      error: () => this.showError('Error cargando sitios')
     });
   }
 
-  //Limpia el formulario
   resetForm(): void {
     this.newSite = {
       id: '',
@@ -83,5 +91,55 @@ export class AdminComponent {
       comments: [],
       commentUser: []
     };
+    this.isEditing = false;
+  }
+
+  startEdit(site: any): void {
+    this.isEditing = true;
+    this.originalSite = JSON.parse(JSON.stringify(site)); // Copia profunda
+    site.editing = true;
+  }
+
+  cancelEdit(site: any): void {
+    // Restauración completa de propiedades
+    Object.keys(this.originalSite).forEach(key => {
+      site[key] = this.originalSite[key];
+    });
+    site.editing = false;
+    this.isEditing = false;
+    this.originalSite = null;
+  }
+
+  updateSite(site: any): void {
+    if (this.isValidSite(site)) {
+      this.sitiosService.updateSite(site).subscribe({
+        next: () => {
+          this.snackBar.open('Sitio actualizado', 'Cerrar', { duration: 3000 });
+          this.loadSitios();
+          site.editing = false;
+        },
+        error: () => this.showError('Error actualizando sitio')
+      });
+    }
+  }
+
+  deleteSite(siteId: string): void {
+    if (confirm('¿Eliminar este sitio permanentemente?')) {
+      this.sitiosService.deleteSite(siteId).subscribe({
+        next: () => {
+          this.snackBar.open('Sitio eliminado', 'Cerrar', { duration: 3000 });
+          this.loadSitios();
+        },
+        error: () => this.showError('Error eliminando sitio')
+      });
+    }
+  }
+
+  private showError(message: string): void {
+    this.snackBar.open(message, 'Cerrar', { duration: 3000 });
+  }
+
+  isFormValid(): boolean {
+    return this.isValidSite(this.newSite);
   }
 }

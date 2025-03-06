@@ -1,40 +1,108 @@
-<div id='patata'>
+<div id="id">
   <app-navbar></app-navbar>
   <div class="register-container">
     <mat-card class="register-card">
       <mat-card-title>Registro</mat-card-title>
       <mat-card-content>
         <form (ngSubmit)="register()" #registerForm="ngForm">
+          <!-- Nombre -->
           <mat-form-field appearance="outline">
             <mat-label>Nombre</mat-label>
-            <input matInput type="text" [(ngModel)]="user.firstName" name="firstName" required>
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="user.firstName"
+              name="firstName"
+              required
+            />
+            <mat-error
+              *ngIf="
+                registerForm.controls['firstName']?.invalid &&
+                registerForm.controls['firstName']?.touched
+              "
+            >
+              El nombre es obligatorio.
+            </mat-error>
           </mat-form-field>
 
+          <!-- Apellidos -->
           <mat-form-field appearance="outline">
             <mat-label>Apellidos</mat-label>
-            <input matInput type="text" [(ngModel)]="user.lastName" name="lastName" required>
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="user.lastName"
+              name="lastName"
+              required
+            />
+            <mat-error
+              *ngIf="
+                registerForm.controls['lastName']?.invalid &&
+                registerForm.controls['lastName']?.touched
+              "
+            >
+              Los apellidos son obligatorios.
+            </mat-error>
           </mat-form-field>
 
+          <!-- Email -->
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput type="email" [(ngModel)]="user.email" name="email" required>
+            <input
+              matInput
+              type="email"
+              [(ngModel)]="user.email"
+              name="email"
+              required
+            />
+            <mat-error
+              *ngIf="
+                registerForm.controls['email']?.invalid &&
+                registerForm.controls['email']?.touched
+              "
+            >
+              El correo electrónico no es válido.
+            </mat-error>
           </mat-form-field>
 
+          <!-- Contraseña -->
           <mat-form-field appearance="outline">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" [(ngModel)]="user.password" name="password" required>
+            <input
+              matInput
+              type="password"
+              [(ngModel)]="user.password"
+              name="password"
+              required
+            />
+            <mat-error
+              *ngIf="
+                registerForm.controls['password']?.invalid &&
+                registerForm.controls['password']?.touched
+              "
+            >
+              La contraseña es obligatoria y debe tener al menos 6 caracteres.
+            </mat-error>
           </mat-form-field>
 
+          <!-- Teléfono -->
           <mat-form-field appearance="outline">
             <mat-label>Teléfono</mat-label>
-            <input matInput type="tel" [(ngModel)]="user.phone" name="phone">
+            <input matInput type="tel" [(ngModel)]="user.phone" name="phone" />
           </mat-form-field>
 
+          <!-- Fecha de Nacimiento -->
           <mat-form-field appearance="outline">
             <mat-label>Fecha de Nacimiento</mat-label>
-            <input matInput type="date" [(ngModel)]="user.birthday" name="birthday">
+            <input
+              matInput
+              type="date"
+              [(ngModel)]="user.birthday"
+              name="birthday"
+            />
           </mat-form-field>
 
+          <!-- Género -->
           <mat-form-field appearance="outline">
             <mat-label>Género</mat-label>
             <mat-select [(ngModel)]="user.gender" name="gender">
@@ -44,18 +112,38 @@
             </mat-select>
           </mat-form-field>
 
+          <!-- Comunidad Autónoma -->
           <mat-form-field appearance="outline">
             <mat-label>Comunidad Autónoma</mat-label>
-            <input matInput type="text" [(ngModel)]="user.comunidad" name="comunidad">
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="user.comunidad"
+              name="comunidad"
+            />
           </mat-form-field>
 
-          <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="registerForm.invalid"
+          >
+            Registrarse
+          </button>
         </form>
       </mat-card-content>
 
       <mat-card-actions>
-        <button mat-button routerLink="/login">¿Ya tienes cuenta? Inicia sesión</button>
+        <button mat-button routerLink="/login">
+          ¿Ya tienes cuenta? Inicia sesión
+        </button>
       </mat-card-actions>
+      <div class="navigation-buttons">
+        <button mat-raised-button color="basic" routerLink="/">
+          Volver a Sitios
+        </button>
+      </div>
     </mat-card>
   </div>
 </div>

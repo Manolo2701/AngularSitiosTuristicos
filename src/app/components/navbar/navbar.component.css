@@ -1,82 +1,79 @@
+.navbar {
+  background-color: #2e7d32;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link, .logo-image-link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
 .spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+#button-container {
+  display: flex;
+  gap: 10px;
+}
+
+#button-container button {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
   }
-  
-  ::ng-deep mat-toolbar {
-    background-color: black !important;
-    color: white !important;
-    font-size: 18px !important;
-    border-radius: 0 0 5px 5px !important;
-    padding: 10px 20px;
+
+  .logo-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  
+
+  .logo-link span {
+    margin-bottom: 10px;
+  }
+
+  .logo-img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+  }  
   
   #button-container {
-    display: flex;
-    gap: 15px; 
-    align-items: center;
-    padding-right: 50px;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
   }
-  
-  
-  button {
-    width: 120px;
-    height: 35px;
-    border-radius: 20px;
-    background: linear-gradient(45deg, #0077b6, #00b4d8);
-    color: white;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+
+  #button-container button {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  
-  button:hover {
-    background: linear-gradient(45deg, #00b4d8, #0077b6);
-    transform: translateY(-3px) scale(1.05); 
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); 
-  }
-  
-  #linkindex{
-    text-decoration: none;
-    color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  }
-  img {
-    width: 50px;
-    margin-left: 20px;
-    border-radius: 10px;
-    padding-top: 5px;
-    transition: all 0.3s ease; /* Transición suave */
-  }
-  
-  
-  img:hover {
-    filter: brightness(1.5); 
-    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7); 
-  }
-  
-  
-  
-    @media (max-width: 412px) {
-      button {
-        max-width: 50px;
-      }
-    }
-  
-    @media (max-width: 768px) {
-      button {
-        max-width: 50px;
-      }
-  
-    }
-  
-  
-    @media (max-width: 1024px) {
-      button {
-        max-width: 50px;
-      }
-    }
+}

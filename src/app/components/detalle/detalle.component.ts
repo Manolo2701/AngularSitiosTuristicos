@@ -29,38 +29,47 @@ export class DetalleComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.sitiosService.getSitioById(id).subscribe(sitio => this.sitio = sitio);
+      this.sitiosService.getSitioById(id).subscribe(
+        (sitio) => {
+          this.sitio = sitio;
+        },
+        (error) => {
+          console.error('Error al obtener el sitio:', error);
+        }
+      );
+    } else {
+      console.error('ID de sitio no proporcionado.');
     }
     
-    const userData = this.authService.getUserData(); 
+    const userData = this.authService.getUserData();
     if (userData) {
-      this.currentUser = this.authService.getUserData();
+      this.currentUser = `${userData.firstName} ${userData.lastName}`; // Guardamos el nombre completo
     }
   }
 
-  //Para añadir comentarios
+  // Para añadir comentarios
   addComment(): void {
-    //COmprobación de que está autenticado:
     if (this.authService.isAuthenticated()) {
-      const user = this.authService.getUserData(); 
-      const userName = `${user.firstName} ${user.lastName}`; 
-  
+      const rating = Number(this.newRating);
 
-      const userNameString = String(userName);
-  
-      const rating = Number(this.newRating); 
-  
-      //Para que no se puedan meter caracteres que no sean números
-      if (isNaN(rating)) {
-        alert('La puntuación debe ser un número válido.');
+      // Validación de la puntuación
+      if (isNaN(rating) || rating < 1 || rating > 5) {
+        alert('La puntuación debe ser un número válido entre 1 y 5.');
         return;
       }
-      //Usa sitiosservice para añadir el comentario
+
+      if (!this.newComment.trim()) {
+        alert('Por favor, escriba un comentario.');
+        return;
+      }
+
+      const userNameString = this.currentUser;
+
       this.sitiosService.addCommentToSite(this.sitio.id, this.newComment, rating, userNameString).subscribe(
         (updatedSite) => {
-          this.sitio = updatedSite; 
-          this.newComment = ''; 
-          this.newRating = null; 
+          this.sitio = updatedSite;
+          this.newComment = ''; // Limpiar comentario
+          this.newRating = null; // Limpiar puntuación
         },
         (error) => {
           console.error('Error al agregar comentario', error);
@@ -70,10 +79,9 @@ export class DetalleComponent implements OnInit {
       alert('Por favor, inicie sesión para comentar.');
     }
   }
-  
-  //Para volver a la página anterior (que si no el botón no funciona)
-  goBack() {
+
+  // Para volver a la página anterior
+  goBack(): void {
     window.history.back();
   }
-  
 }

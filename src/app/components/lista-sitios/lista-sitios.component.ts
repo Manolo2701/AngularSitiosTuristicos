@@ -7,26 +7,41 @@ import { SitiosService, Sitio } from '../../services/sitios.service';
 import { RankingLugaresComponent } from '../ranking-lugares/ranking-lugares.component';
 import { ComentariosComponent } from '../comentarios/comentarios.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-lista-sitios',
   standalone: true,
-  imports: [CommonModule, MatCardModule,
-    MatButtonModule, RouterModule,
-    RankingLugaresComponent, ComentariosComponent,
-    NavbarComponent],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    RouterModule,
+    RankingLugaresComponent,
+    ComentariosComponent,
+    NavbarComponent,
+    MatProgressSpinnerModule
+  ],
   templateUrl: './lista-sitios.component.html',
   styleUrls: ['./lista-sitios.component.scss']
 })
-
 export class ListaSitiosComponent implements OnInit {
   sitios: Sitio[] = [];
+  isLoading = true;
 
   constructor(private sitiosService: SitiosService) {}
-  //Coge todos los sitios de sitiosservice
+
   ngOnInit(): void {
-    this.sitiosService.getSitios().subscribe((data) => {
-      this.sitios = data;
-    });
+    this.sitiosService.getSitios().subscribe(
+      (data) => {
+        this.sitios = data;
+        this.isLoading = false;
+        console.log('Sitios cargados:', this.sitios);
+      },
+      (error) => {
+        console.error('Error al cargar los sitios:', error);
+        this.isLoading = false;
+      }
+    );
   }
 }

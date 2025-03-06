@@ -1,14 +1,18 @@
-
-<mat-toolbar>
-  <a href="/" id="linkindex"><span>Ayuntamiento de Cádiz </span></a>
-  <a href="https://institucional.cadiz.es/portada_2017" target="_blank">
-    <img src="../../../assets/imgs/ayun-cadiz-logo.png">
-  </a>
+<mat-toolbar class="navbar">
+  <div class="logo-container">
+    <span class="logo-text">Ayuntamiento de Extremadura</span>
+    <img src="../../../assets/imgs/ayunt_extr_logo.jpg" 
+         alt="Logo Ayuntamiento Extremadura" 
+         class="logo-img" 
+         (click)="onLogoClick()"
+         style="cursor: pointer;">
+  </div>
   <span class="spacer"></span>
+
   <div id="button-container">
-    <button *ngIf="!isAuthenticated" mat-button (click)="goToLogin()">Login</button>
-    <button *ngIf="!isAuthenticated" mat-button (click)="goToRegister()">Registrarse</button>
-    <button *ngIf="isAuthenticated" mat-button (click)="logout()">Logout</button>
-    <button *ngIf="role === 'administrador'" mat-button (click)="addNewSite()">Añadir Sitio</button>
+    <button *ngIf="!isAuthenticated" mat-raised-button color="primary" (click)="goToLogin()">Login</button>
+    <button *ngIf="!isAuthenticated" mat-raised-button color="accent" (click)="goToRegister()">Registrarse</button>
+    <button *ngIf="isAuthenticated" mat-raised-button color="warn" (click)="logout()">Logout</button>
+    <button *ngIf="role === 'administrador'" mat-raised-button color="primary" (click)="administrateSite()">Administrar Sitios</button>
   </div>
 </mat-toolbar>

@@ -1,9 +1,132 @@
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-#body{
-    background: linear-gradient(to bottom, rgb(66, 237, 252), #05365b);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+/* Reset de márgenes y paddings */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Variables de colores inspiradas en Extremadura */
+$primary-color: #2e7d32;
+$secondary-color: #66bb6a;
+$accent-color: #a5d6a7;
+$text-color: #1b5e20;
+$background-color: #e8f5e9;
+
+/* Estilos globales */
+body {
+  font-family: 'Arial', sans-serif;
+  color: $text-color;
+  line-height: 1.6;
+  background-color: $background-color;
+}
+
+/* Estilo para el contenedor principal */
+#body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Georgia', serif;
+  color: rgb(255, 255, 255);
+  position: relative;
+  z-index: 0;
+}
+
+/* Título principal */
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Tarjetas */
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 15px;
+  margin: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  }
+}
+
+/* Botones */
+button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+/* Secciones */
+.section {
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 20px;
+
+  h2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+}
+
+/* Componentes específicos */
+.grid-container {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco detrás de las cards */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+app-comentarios {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  .card {
+    margin: 10px;
+    padding: 10px;
+  }
+  button {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+  .section {
+    padding: 20px;
+  }
+  button {
+    padding: 8px 16px;
+  }
 }

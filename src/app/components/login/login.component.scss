@@ -1,3 +1,105 @@
-img{
-  width: 2px;
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #2e7d32, #66bb6a);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+img {
+  width: 100px; // O el tamaño que prefieras
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; 
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%; 
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #333;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #66bb6a;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* En login.component.css y register.component.css */
+.button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* O usando clase específica para los botones de navegación */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Estilo adicional para el botón "Volver" */
+mat-raised-button[color="basic"] {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+mat-raised-button[color="basic"]:hover {
+  background-color: #e0e0e0;
 }

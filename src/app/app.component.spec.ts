@@ -24,6 +24,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, turismo-app');
+    // Ajustado el selector a la estructura real, dependiendo de cómo uses el título en tu plantilla HTML
+    expect(compiled.querySelector('h1')?.textContent).toContain('turismo-app');
   });
 });

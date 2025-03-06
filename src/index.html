@@ -1,15 +1,62 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>TurismoApp</title>
+  <title>Turismo Extremadura</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#0a4661">
+  <meta name="description" content="Descubre los mejores lugares turísticos de Extremadura. Un viaje inolvidable entre historia, naturaleza y cultura.">
+  <link rel="icon" type="image/x-icon" href="assets/icons/turismo-icono.ico">
+  <style>
+    /* Definir las fuentes locales */
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('fonts/OpenSans-Regular.woff') format('woff');
+      font-weight: 400; /* Regular */
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('fonts/OpenSans-SemiBold.woff') format('woff');
+      font-weight: 600; /* SemiBold */
+      font-style: normal;
+    }
+
+    /* Estilos principales */
+    #body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #45ff6d, #1a6d28);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+      z-index: 0;
+    }
+
+    #background-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 83, 42, 0.2);
+      z-index: -1;
+    }
+
+    app-root {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
+
 <body class="mat-typography" id="body">
+  <div id="background-overlay"></div>
   <app-root></app-root>
 </body>
 </html>

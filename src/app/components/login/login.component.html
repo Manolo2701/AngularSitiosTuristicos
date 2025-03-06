@@ -1,61 +1,14 @@
-<style>
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; 
-  background: linear-gradient(45deg, #249eba, #5e6a70);;
-}
-
-.login-card {
-  width: 400px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-img{
-  width: 100%;
-}
-
-
-input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #3f51b5;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #303f9f;
-}
-
-.error-message {
-  color: red;
-  margin-top: 10px;
-}
-</style>
-
 <app-navbar></app-navbar>
 <div class="login-container">
   <mat-card class="login-card">
-    <img mat-card-img src="../../../assets/imgs/logo-cadiz.png">
+    <img
+      mat-card-img
+      src="../../../assets/imgs/logo-extr.png"
+      alt="Logo de Extremadura"
+    />
     <h2>Iniciar sesión</h2>
     <form (ngSubmit)="onSubmit()">
-      <div>
+      <div class="input-container">
         <label for="email">Correo electrónico</label>
         <input
           id="email"
@@ -67,7 +20,7 @@ button:hover {
         />
       </div>
 
-      <div>
+      <div class="input-container">
         <label for="password">Contraseña</label>
         <input
           id="password"
@@ -79,11 +32,18 @@ button:hover {
         />
       </div>
 
-      <button type="submit" [disabled]="!email || !password">Iniciar sesión</button>
+      <button type="submit" [disabled]="!email || !password">
+        Iniciar sesión
+      </button>
 
       <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}
       </div>
     </form>
+    <div class="button-container">
+      <button mat-raised-button color="basic" routerLink="/">
+        Volver a Sitios
+      </button>
+    </div>
   </mat-card>
 </div>

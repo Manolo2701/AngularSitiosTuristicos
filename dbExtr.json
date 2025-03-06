@@ -1,0 +1,219 @@
+{
+  "sitios": [
+    {
+      "name": "Cáceres - Ciudad Monumental",
+      "description": "Patrimonio de la Humanidad, conocido por su arquitectura medieval y renacentista.",
+      "parrafo1": "La Ciudad Monumental de Cáceres es famosa por su bien conservado casco antiguo, lleno de edificios medievales y renacentistas.",
+      "parrafo2": "Horario: Abierta todos los días de 10:00 a 18:00.",
+      "imageUrl": "assets/imgs/caceres.jpg",
+      "imageGallery": [
+        "./assets/imgs/caceres-1.jpg",
+        "./assets/imgs/caceres-2.jpg",
+        "./assets/imgs/caceres-3.jpg",
+        "./assets/imgs/caceres-4.jpg"
+      ],
+      "rating": [
+        "4.8"
+      ],
+      "comments": [
+        "Un lugar lleno de historia y belleza. Ideal para pasear por sus calles empedradas.",
+        "Increíble vista de la plaza mayor y sus monumentos históricos."
+      ],
+      "commentUser": [
+        "Juan Pérez",
+        "María López"
+      ],
+      "id": "caceres_ciudad_monumental",
+      "editing": true,
+      "location": " "
+    },
+    {
+      "name": "Mérida - Teatro Romano",
+      "description": "Uno de los conjuntos arqueológicos más importantes de España, ubicado en la ciudad de Mérida.",
+      "parrafo1": "El Teatro Romano de Mérida es un lugar impresionante que nos transporta a la época romana, donde se celebraban representaciones teatrales.",
+      "parrafo2": "Horario: 09:00 - 20:00, excepto los lunes.",
+      "imageUrl": "assets/imgs/merida-teatro.jpg",
+      "imageGallery": [
+        "./assets/imgs/merida-1.jpg",
+        "./assets/imgs/merida-2.jpg",
+        "./assets/imgs/merida-3.jpg",
+        "./assets/imgs/merida-4.jpg"
+      ],
+      "rating": [
+        "4.9",
+        5
+      ],
+      "comments": [
+        "Un lugar impresionante que nos conecta con la historia.",
+        "Me fascinó el Teatro Romano, realmente bien conservado.",
+        "Qué bonito"
+      ],
+      "commentUser": [
+        "Pedro González",
+        "Lucía Fernández",
+        "Josefa Sánchez"
+      ],
+      "id": "merida_teatro_romano"
+    },
+    {
+      "name": "Parque Nacional de Monfragüe",
+      "description": "Espacio natural protegido, famoso por su biodiversidad y como uno de los mejores lugares para el avistamiento de aves.",
+      "parrafo1": "Monfragüe es un paraíso para los amantes de la naturaleza, con rutas de senderismo y vistas espectaculares.",
+      "parrafo2": "Horario: Abierto todo el año, consulta horarios de las rutas guiadas.",
+      "imageUrl": "assets/imgs/monfrague.jpg",
+      "imageGallery": [
+        "./assets/imgs/monfrague-1.jpg",
+        "./assets/imgs/monfrague-2.jpg",
+        "./assets/imgs/monfrague-3.jpg"
+      ],
+      "rating": [
+        "4.7"
+      ],
+      "comments": [
+        "Perfecto para desconectar y disfrutar de la naturaleza.",
+        "Las rutas de senderismo son espectaculares."
+      ],
+      "commentUser": [
+        "Carlos García",
+        "Ana Martínez"
+      ],
+      "id": "monfrague_parque_nacional"
+    },
+    {
+      "name": "Trujillo - Plaza Mayor",
+      "description": "La Plaza Mayor de Trujillo, rodeada de palacios renacentistas y monumentos históricos.",
+      "parrafo1": "Trujillo es una ciudad histórica llena de encanto, destacando su Plaza Mayor y el monumento ecuestre a Francisco Pizarro.",
+      "parrafo2": "Horario: Abierto todo el año.",
+      "imageUrl": "assets/imgs/trujillo-plaza.jpg",
+      "imageGallery": [
+        "./assets/imgs/trujillo-1.jpg",
+        "./assets/imgs/trujillo-2.jpg",
+        "./assets/imgs/trujillo-3.jpg"
+      ],
+      "rating": [
+        "4.6"
+      ],
+      "comments": [
+        "El ambiente de la plaza es muy agradable.",
+        "Una plaza con mucha historia, un lugar bonito para pasear."
+      ],
+      "commentUser": [
+        "Luis Martínez",
+        "Sofía Pérez"
+      ],
+      "id": "trujillo_plaza_mayor"
+    },
+    {
+      "name": "Valle del Jerte",
+      "description": "Famoso por sus cerezos en flor y por las rutas naturales a lo largo del valle.",
+      "parrafo1": "El Valle del Jerte es un espectáculo natural que atrae a miles de turistas cada primavera, cuando los cerezos están en flor.",
+      "parrafo2": "Horario: Abierto todo el año, ideal para senderismo en cualquier temporada.",
+      "imageUrl": "assets/imgs/valle-jerte.jpg",
+      "imageGallery": [
+        "./assets/imgs/valle-jerte-1.jpg",
+        "./assets/imgs/valle-jerte-2.jpg",
+        "./assets/imgs/valle-jerte-3.jpg"
+      ],
+      "rating": [
+        "4.9"
+      ],
+      "comments": [
+        "Una maravilla de la naturaleza, especialmente en la temporada de floración.",
+        "Perfecto para un día de senderismo con vistas impresionantes."
+      ],
+      "commentUser": [
+        "Pablo Sánchez",
+        "Clara Rodríguez"
+      ],
+      "id": "valle_del_jerte",
+      "editing": true,
+      "location": " "
+    }
+  ],
+  "users": [
+    {
+      "id": "admin1",
+      "firstName": "Admin",
+      "lastName": "Turismo",
+      "comunidad": "Extremadura",
+      "email": "admin@extremadura.com",
+      "role": "administrador",
+      "birthday": "1985-05-01",
+      "gender": "masculino",
+      "phone": "999888777",
+      "password": "$2b$10$GEOj1OOBtknSzT/xqNRaw.4nEKuGKK4qg900KhYN5uAoroCkhoqlK"
+    },
+    {
+      "id": "user1",
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "email": "juan.perez@mail.com",
+      "password": "$2b$10$mk85o4Zgelvj6o/gcCwozOi0LFxVoYLBElrpQow.1yX7Wv2U7.k1u",
+      "phone": "666777888",
+      "birthday": "1990-07-15",
+      "gender": "masculino",
+      "role": "usuario",
+      "comunidad": "Extremadura"
+    },
+    {
+      "id": "5630",
+      "firstName": "Manuel",
+      "lastName": "Barbado",
+      "email": "manu@gmail.com",
+      "password": "$2b$10$eKMgU7aobVSoBDJFDXre0.142SUzt.qftVec01nMrAfF1vUy42rZK",
+      "phone": "630274278",
+      "birthday": "2004-01-27",
+      "gender": "masculino",
+      "role": "usuario",
+      "comunidad": "Cádiz"
+    },
+    {
+      "id": "c075",
+      "firstName": "Pepi",
+      "lastName": "Sánchez",
+      "email": "pepi@gmail.com",
+      "password": "$2b$10$TShDvsgSM0KpGVQP39a.V.yYzTKAk6AbNp2OwW/Yy6ApW6Keh.zai",
+      "phone": "630274278",
+      "birthday": "1964-07-31",
+      "gender": "femenino",
+      "role": "usuario",
+      "comunidad": "Cádiz"
+    },
+    {
+      "id": "85f9",
+      "firstName": "María",
+      "lastName": "Mares",
+      "email": "mar@gmail.com",
+      "password": "$2b$10$WxasD25XZtN8FOzE.mqgzu1.6nu27oMdgF8jcav7j3P8sn.cK6t1W",
+      "phone": "123456789",
+      "birthday": "1111-11-11",
+      "gender": "femenino",
+      "role": "usuario",
+      "comunidad": "Madrid"
+    },
+    {
+      "id": "e7e0",
+      "firstName": "Manolo",
+      "lastName": "Barbado",
+      "email": "manoloB@gmail.com",
+      "password": "$2b$10$112JQ.Uvapibta0QSLT7Fu2LcJ.VK7YRdxh7ga1QoGXzFV9hm0qKu",
+      "phone": "123456789",
+      "birthday": "0088-08-08",
+      "gender": "masculino",
+      "role": "usuario",
+      "comunidad": "Cádiz"
+    },
+    {
+      "id": "7c57",
+      "firstName": "Josefa",
+      "lastName": "Sánchez",
+      "email": "josefa@gmail.com",
+      "password": "$2b$10$jw2F1RuXPwhTpO3uJvL8H.JCe/Qafi.yoL1pyMo0SMob4BdSJiaMa",
+      "phone": "123456789",
+      "birthday": "0888-08-08",
+      "gender": "femenino",
+      "role": "usuario",
+      "comunidad": "Cádiz"
+    }
+  ]
+}

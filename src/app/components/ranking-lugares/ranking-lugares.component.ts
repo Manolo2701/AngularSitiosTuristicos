@@ -22,7 +22,7 @@ export class RankingLugaresComponent implements OnInit {
     });
   }
 
-  //Obtiene los lugares mejor valorados
+  // Obtiene los lugares mejor valorados
   getLugaresMejorValorados(sitios: Sitio[]): Sitio[] {
     return sitios
       .filter(sitio => sitio.rating.length > 0)
@@ -34,7 +34,7 @@ export class RankingLugaresComponent implements OnInit {
       .slice(0, 5);
   }
 
-  //Sirve para obtener la media de notas
+  // Sirve para obtener la media de notas
   getAverageRating(ratings: number[]): number {
     return ratings.length > 0 ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0;
   }

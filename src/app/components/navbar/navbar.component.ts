@@ -1,48 +1,53 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  imports: [MatCardModule,MatSnackBarModule, MatToolbarModule, CommonModule]
+  imports: [MatButtonModule, MatToolbarModule, CommonModule, RouterModule]
 })
 export class NavbarComponent {
+
   constructor(private authService: AuthService, private router: Router) {}
-  //Comprueba que está autenticado
+
   get isAuthenticated(): boolean {
     return this.authService.isAuthenticated();
   }
 
-  //Comprueba el rol porque se mete en el payload del token (aunqeu sea falso)
   get role(): string | null {
     return this.authService.getRole();
   }
 
-  //Para desloguear
   logout(): void {
+    console.log('Logout clicked');
     this.authService.logout();
     this.router.navigate(['/']);
   }
 
-  //Redirecciona a login
   goToLogin(): void {
+    console.log('Login clicked');
     this.router.navigate(['/login']);
   }
-  //Redirecciona a registrar
+
   goToRegister(): void {
+    console.log('Register clicked');
     this.router.navigate(['/register']);
   }
 
-  //SI eres admin te lleva a la pantalla de añadir sitios.
-  addNewSite(): void {
-    this.router.navigate(['/add-site']); 
+  administrateSite(): void {
+    console.log('Administrate site clicked');
+    this.router.navigate(['/add-site']);
+  }
+
+  onLogoClick(): void {
+    console.log('Logo clicked');
+    window.open('https://www.juntaex.es', '_blank');
   }
 }
-

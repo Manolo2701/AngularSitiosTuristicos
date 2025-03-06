@@ -1,9 +1,20 @@
-<div class="comentarios-container" *ngIf="comentarios.length > 0">
-    <mat-card class="comentario-card">
-      <mat-card-content>
-        <p class="comentario-texto">"{{ comentarios[currentCommentIndex].comment }}"</p>
-        <p class="comentario-autor">- {{ comentarios[currentCommentIndex].user }}</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
+<div class="comentarios-container" *ngIf="comentarios.length > 0; else noComments">
+  <mat-card class="comentario-card">
+    <mat-card-content>
+      <p class="comentario-texto" aria-live="polite">"{{ comentarios[currentCommentIndex].comment }}"</p>
+      <p class="comentario-autor">- {{ comentarios[currentCommentIndex].user }}</p>
+    </mat-card-content>
+  </mat-card>
   
+  <!-- Botón para siguiente comentario -->
+  <button mat-button class="next-comment-button" (click)="nextComment()">Siguiente Comentario</button>
+</div>
+
+<!-- Template de fallback si no hay comentarios -->
+<ng-template #noComments>
+  <mat-card class="comentario-card">
+    <mat-card-content>
+      <p class="comentario-texto">Cargando comentarios...</p>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

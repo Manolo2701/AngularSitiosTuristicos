@@ -21,19 +21,33 @@ export class ComentariosComponent implements OnInit, OnDestroy {
 
   constructor(private sitiosService: SitiosService) {}
 
-  //Para iniciar cualquier cosa cuando la clase se exporta y carga
   ngOnInit(): void {
-    this.subscription = this.sitiosService.getRandomComments(5).subscribe(comments => {
-      this.comentarios = comments;
-      this.startRotation();
+    this.subscription = this.sitiosService.getRandomComments(5).subscribe({
+      next: (comments) => {
+        if (comments && comments.length) {
+          this.comentarios = comments;
+          this.startRotation();
+        }
+      },
+      error: (err) => {
+        console.error('Error al obtener los comentarios: ', err);
+        // Manejo de error: Puedes mostrar un mensaje o manejarlo de otra forma.
+      }
     });
   }
 
-  //Intervalo de rotación del carrusel, cada 5 segunditos:
+  // Inicia la rotación automática de los comentarios
   startRotation(): void {
-    this.intervalId = setInterval(() => {
-      this.currentCommentIndex = (this.currentCommentIndex + 1) % this.comentarios.length;
-    }, 5000);
+    if (this.comentarios.length > 0) {
+      this.intervalId = setInterval(() => {
+        this.currentCommentIndex = (this.currentCommentIndex + 1) % this.comentarios.length;
+      }, 5000);
+    }
+  }
+
+  // Cambia al siguiente comentario de forma manual
+  nextComment(): void {
+    this.currentCommentIndex = (this.currentCommentIndex + 1) % this.comentarios.length;
   }
 
   ngOnDestroy(): void {
