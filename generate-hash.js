@@ -1,16 +1,20 @@
 const bcrypt = require('bcryptjs');
 
-// Contraseña en texto plano que quieres hashear
-const password = 'admin1'; // Cambia esto por la contraseña que desees
+const password = process.argv[2];
 
-// Función para generar hash de la contraseña usando bcrypt
-function generateHash(password) {
-  const salt = bcrypt.genSaltSync(10);
-  const hash = bcrypt.hashSync(password, salt);
-  console.log('Hash generado:', hash);
-  return hash;
+if (!password) {
+  console.error('Uso: node generate-hash.js <contraseña>');
+  process.exit(1);
 }
 
-// Ejecuta la función
-const hashedPassword = generateHash(password);
-console.log('Contraseña hasheada para db.json:', hashedPassword);
+const saltRounds = 10;
+
+bcrypt.hash(password, saltRounds)
+  .then((hash) => {
+    console.log('Hash generado:');
+    console.log(hash);
+  })
+  .catch((error) => {
+    console.error('No se pudo generar el hash:', error.message);
+    process.exitCode = 1;
+  });
